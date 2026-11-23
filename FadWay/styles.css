@@ -1,0 +1,478 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Colores de la identidad visual */
+    --color-negro: #111111;
+    --color-crema: #F4F0E8;
+    --color-gris: #7A7A7A;
+    --color-rosa: #E85D75;
+    --color-fucsia: #E85DC2;
+
+    /* Colores de uso general */
+    --color-fondo: var(--color-crema);
+    --color-texto: var(--color-negro);
+    --color-texto-secundario: var(--color-gris);
+    --color-superficie: #FFFFFF;
+
+    /* Tipografía */
+    --fuente-principal: 'Montserrat', sans-serif;
+
+    /* Espaciados */
+    --espacio-xs: 0.5rem;
+    --espacio-sm: 1rem;
+    --espacio-md: 1.5rem;
+    --espacio-lg: 2rem;
+    --espacio-xl: 3rem;
+
+    /* Otros valores reutilizables */
+    --radio: 0.35rem;
+    --sombra: 0 0.35rem 1.2rem rgba(17, 17, 17, 0.09);
+    --ancho-maximo: 1200px;
+}
+
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-principal);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1,
+h2 {
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+h2 {
+    margin-bottom: var(--espacio-md);
+    font-size: 1.45rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+p {
+    color: var(--color-texto-secundario);
+}
+
+a {
+    color: inherit;
+}
+
+/* Header y navegación */
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-sm);
+    padding: var(--espacio-md) var(--espacio-sm);
+    background-color: var(--color-superficie);
+    border-bottom: 2px solid var(--color-negro);
+}
+
+.marca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-xs);
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    width: min(12rem, 65%);
+    height: auto;
+    object-fit: contain;
+}
+
+.marca-texto h1 {
+    margin-bottom: 0.2rem;
+    color: var(--color-negro);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.marca-texto h2 {
+    margin-bottom: 0;
+    color: var(--color-gris);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
+}
+
+.navegacion {
+    width: 100%;
+}
+
+.navegacion ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navegacion a {
+    display: inline-block;
+    padding: 0.35rem 0.15rem;
+    color: var(--color-negro);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.navegacion a:hover,
+.navegacion a:focus-visible {
+    color: var(--color-rosa);
+}
+
+/* Secciones */
+.seccion {
+    width: min(100% - 2rem, var(--ancho-maximo));
+    margin: 0 auto;
+    padding: var(--espacio-xl) 0;
+}
+
+.seccion + .seccion {
+    border-top: 1px solid rgba(122, 122, 122, 0.45);
+}
+
+.seccion > h2 {
+    text-align: center;
+}
+
+/* Presentación */
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 19rem;
+    text-align: center;
+}
+
+.presentacion .etiqueta {
+    margin-bottom: var(--espacio-xs);
+    color: var(--color-rosa);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.presentacion h2 {
+    margin-bottom: var(--espacio-sm);
+    font-size: clamp(1.7rem, 7vw, 2.8rem);
+}
+
+.presentacion > p:last-child {
+    max-width: 42rem;
+    margin-bottom: 0;
+}
+
+/* Información sobre la marca */
+.informacion {
+    text-align: center;
+}
+
+.informacion h3 {
+    margin-bottom: var(--espacio-sm);
+    color: var(--color-rosa);
+}
+
+.informacion p {
+    max-width: 48rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Galería y tarjetas */
+.galeria {
+    text-align: center;
+}
+
+.introduccion-seccion {
+    max-width: 42rem;
+    margin: -0.5rem auto var(--espacio-lg);
+}
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-md);
+}
+
+.tarjeta {
+    overflow: hidden;
+    background-color: var(--color-superficie);
+    border: 1px solid rgba(122, 122, 122, 0.35);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background-color: #E5E1DA;
+}
+
+.contenido-tarjeta {
+    padding: var(--espacio-md);
+}
+
+.contenido-tarjeta h3 {
+    margin-bottom: var(--espacio-xs);
+    color: var(--color-negro);
+}
+
+.contenido-tarjeta p {
+    margin-bottom: var(--espacio-md);
+    font-size: 0.88rem;
+}
+
+.boton {
+    display: inline-block;
+    padding: 0.65rem 1.1rem;
+    border: 1px solid var(--color-negro);
+    border-radius: 0;
+    background-color: var(--color-negro);
+    color: var(--color-superficie);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.boton:hover,
+.boton:focus-visible {
+    border-color: var(--color-rosa);
+    background-color: var(--color-rosa);
+    color: var(--color-negro);
+}
+
+/* Curiosidades */
+.curiosidades {
+    text-align: center;
+}
+
+.curiosidades ul {
+    display: grid;
+    gap: var(--espacio-sm);
+    max-width: 48rem;
+    margin: 0 auto var(--espacio-lg);
+    padding: 0;
+    list-style: none;
+}
+
+.curiosidades li {
+    padding: var(--espacio-sm);
+    border-left: 3px solid var(--color-rosa);
+    background-color: rgba(255, 255, 255, 0.65);
+    color: var(--color-texto-secundario);
+    text-align: left;
+}
+
+.enlace-externo {
+    color: var(--color-rosa);
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: color 0.2s ease;
+}
+
+.enlace-externo:hover,
+.enlace-externo:focus-visible {
+    color: var(--color-fucsia);
+}
+
+/* Footer */
+.pie {
+    padding: var(--espacio-lg) var(--espacio-sm);
+    background-color: var(--color-negro);
+    color: var(--color-crema);
+    text-align: center;
+}
+
+.pie p {
+    margin-bottom: 0.35rem;
+    color: var(--color-crema);
+    font-size: 0.78rem;
+}
+
+.pie p:first-child {
+    color: var(--color-rosa);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Accesibilidad: foco visible para navegar con teclado */
+a:focus-visible {
+    outline: 2px solid var(--color-fucsia);
+    outline-offset: 4px;
+}
+
+/* TABLETS */
+@media (min-width: 600px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .encabezado {
+        padding: var(--espacio-md) var(--espacio-lg);
+    }
+
+    .marca {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--espacio-md);
+        text-align: left;
+    }
+
+    .logo {
+        width: 10rem;
+    }
+
+    .navegacion ul {
+        gap: var(--espacio-md);
+    }
+
+    .navegacion a {
+        font-size: 0.75rem;
+    }
+
+    .seccion {
+        width: min(100% - 3rem, var(--ancho-maximo));
+        padding: 4rem 0;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--espacio-lg);
+    }
+
+    .curiosidades ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* COMPUTADORAS */
+@media (min-width: 900px) {
+    .encabezado {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.8rem max(2rem, calc((100% - var(--ancho-maximo)) / 2));
+    }
+
+    .marca {
+        width: auto;
+        justify-content: flex-start;
+        gap: var(--espacio-sm);
+    }
+
+    .logo {
+        width: 8.5rem;
+    }
+
+    .marca-texto h1 {
+        font-size: 1.45rem;
+    }
+
+    .marca-texto h2 {
+        font-size: 0.65rem;
+    }
+
+    .navegacion {
+        width: auto;
+    }
+
+    .navegacion ul {
+        justify-content: flex-end;
+        gap: var(--espacio-md);
+    }
+
+    .presentacion {
+        min-height: 25rem;
+    }
+
+    .informacion {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--espacio-lg);
+    }
+
+    .tarjeta:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0 0.7rem 1.6rem rgba(17, 17, 17, 0.15);
+    }
+
+    .curiosidades ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+    }
+
+    .curiosidades li {
+        display: flex;
+        align-items: center;
+        min-height: 7rem;
+    }
+}
+
+/* Pantallas muy anchas */
+@media (min-width: 1200px) {
+    .presentacion {
+        min-height: 28rem;
+    }
+
+    .seccion {
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+}
